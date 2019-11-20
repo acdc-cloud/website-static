@@ -1,0 +1,77 @@
+<style>
+.accs-price-table-wrapper {
+        border: 1px solid #e5e8ed;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 2px 4px rgba(3,27,78,.06);
+        box-shadow: 0 2px 4px rgba(3,27,78,.06);
+        /*min-width: 400px;*/
+        /*max-width: 680px;*/
+        font: 400 16px/1.5 Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.accs-price-table {
+        border: none;
+        border-collapse: collapse;
+        border-radius: 5px;
+        border-spacing: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin: 0;
+        margin-bottom: 0px;
+        table-layout: unset;
+        width: 100%;
+}
+
+.accs-price-table thead tr {
+        background-color: #f3f6f9;
+        border-bottom: 1px solid #e5e8ed;
+}
+
+.accs-price-table thead th {
+        border: none;
+        color: #031b4e;
+        font-size: 12px;
+        padding: 14px 10px 13px;
+        padding-left: 10px;
+        text-align: left;
+        text-transform: uppercase;
+        vertical-align: bottom;
+}
+
+.accs-price-table tbody tr:not(:last-of-type) {
+        border-bottom: 1px solid #e5e8ed;
+}
+
+.accs-price-table tbody tr {
+        border-top: none;
+        color: rgba(3, 27, 78, 0.7);
+}
+
+.accs-price-table > tbody:nth-child(2) > tr:nth-child(1) {
+        /*background-color: grey;*/
+}
+
+.accs-price-table tbody td:first-child, 
+.accs-price-table tbody th:first-child, 
+.accs-price-table thead td:first-child, 
+.accs-price-table thead th:first-child {
+        padding-left: 40px;
+}
+.hourly {
+        text-align: right;
+}
+.monthly {
+        text-align: right;
+        opacity: 0.5;
+}
+</style>
+<body>
+  <div class="accs-price-table-wrapper">
+    <table class="accs-price-table">
+      <thead> <tr> <th>Network Services</th>    <th style="text-align:right">NOK/hour</th> <th style="text-align:right">~NOK/month</th> </tr> </thead>
+      <tbody>
+              <tr> <td>Public IPv4 address</td> <td class="hourly">          0,02</td>     <td class="monthly">14,60</td>               </tr>
+              <tr> <td>Private network</td>     <td class="hourly">Free of charge</td>     <td class="monthly">0,00</td>                </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

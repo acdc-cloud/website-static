@@ -1,0 +1,156 @@
+<style>
+@media (max-width: 1085px) {
+	.sqs-layout [class*="sqs-col"] {
+		float: none !important;
+    	width: auto !important;
+	}
+}
+@media (max-width: 640px) {
+  .accs-price-table-wrapper {
+    font-size: 2vw !important;
+  }
+.accs-price-table tbody td:first-child, .accs-price-table tbody th:first-child, .accs-price-table thead td:first-child, .accs-price-table thead th:first-child {
+    padding-left: 5px !important;
+}
+  .accs-price-table thead th {
+    font-size: 10px !important;
+	padding: 0px 0px 0px 0px !important;
+  }
+  .accs-price-table thead th:nth-child(5) {
+    display: none !important;
+  }
+  .accs-price-table tbody td:nth-child(5) {
+    display: none !important;
+  }
+}
+.accs-price-table-wrapper {
+	border: 1px solid #e5e8ed;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 2px 4px rgba(3,27,78,.06);
+	box-shadow: 0 2px 4px rgba(3,27,78,.06);
+	/*min-width: 400px;*/
+	/*max-width: 680px;*/
+	font: 400 16px/1.5 Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.accs-price-table {
+	border: none;
+	border-collapse: collapse;
+	border-radius: 5px;
+	border-spacing: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	margin: 0;
+	margin-bottom: 0px;
+	table-layout: unset;
+	width: 100%;
+}
+
+.accs-price-table thead tr {
+	background-color: #f3f6f9;
+	border-bottom: 1px solid #e5e8ed;
+}
+
+.accs-price-table thead th {
+	border: none;
+	color: #031b4e;
+	font-size: 11px;
+	padding: 14px 10px 13px;
+	padding-left: 10px;
+	text-align: left;
+	text-transform: uppercase;
+	vertical-align: bottom;
+}
+
+.accs-price-table tbody tr:not(:last-of-type) {
+	border-bottom: 1px solid #e5e8ed;
+}
+.accs-price-table tbody tr:first-of-type {
+	border-top: 3px solid #e5e8ed;
+	border-bottom: 3px solid #e5e8ed;
+}
+.accs-price-table tbody tr {
+	border-top: none;
+	color: rgba(3, 27, 78, 0.7);
+}
+
+.accs-price-table > tbody:nth-child(2) > tr:nth-child(1) {
+	/*background-color: grey;*/
+}
+
+.accs-price-table tbody td:first-child, 
+.accs-price-table tbody th:first-child, 
+.accs-price-table thead td:first-child, 
+.accs-price-table thead th:first-child {
+	padding-left: 40px;
+}
+
+.ram {
+        text-align: right;
+}
+.vcpu {
+        text-align: right;
+}
+.hourly {
+        text-align: right;
+}
+.monthly {
+        text-align: right;
+	opacity: 0.5;
+}
+.flavor {
+}
+</style>
+<body>
+    <div class="accs-price-table-wrapper">
+        <table class="accs-price-table">
+            <thead>
+	            <tr>
+                    <th>VM / Compute</th>
+                    <th colspan=7>Discounts in %</th>
+                </tr>
+                <tr>
+                    <th>Volume min active VM's</th>
+                    <th>1 Year reserved monthly</th>
+                    <th>1 Year prepaid annually</th>
+                    <th>2 Year reserved monthly</th>
+                    <th>2 Year prepaid annually</th>
+                    <th>3 Year reserved monthly</th>
+                    <th>3 Year prepaid annually</th>
+                    <th>Beyond 3 years by agreement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10-19</td><td>18 %</td><td>23 %</td><td>28 %</td><td>32 %</td><td>38 %</td><td>42 %</td> <td rowspan=*></td> </tr>
+                <tr><td>20-99</td><td>20 %</td><td>24 %</td><td>30 %</td><td>34 %</td><td>40 %</td><td>44 %</td> </tr>
+                <tr><td>100-249</td><td>22 %</td><td>26 %</td><td>32 %</td><td>36 %</td><td>42 %</td><td>46 %</td> </tr>
+                <tr><td>250-499</td><td>24 %</td><td>28 %</td><td>34 %</td><td>38 %</td><td>44 %</td><td>48 %</td> </tr>
+                <tr><td>500-999</td><td>26 %</td><td>30 %</td><td>36 %</td><td>40 %</td><td>46 %</td><td>50 %</td> </tr>
+                <tr><td>1000-2000</td><td>28 %</td><td>32 %</td><td>38 %</td><td>42 %</td><td>48 %</td><td>52 %</td> </tr>
+                <tr><td colspan=*>2000+ by agreement</td></tr>
+            </tbody>
+    </table>
+  </div>
+  <div class="accs-price-table-wrapper">
+        <table class="accs-price-table">
+            <thead>
+	            <tr>
+                    <th>Storage and bandwidth</th>
+                    <th colspan=7>Discounts in %</th>
+                </tr>
+                <tr>
+                    <th>Item</th>
+                    <th>1 Year reserved monthly</th>
+                    <th>1 Year prepaid annually</th>
+                    <th>2 Year reserved monthly</th>
+                    <th>2 Year prepaid annually</th>
+                    <th>3 Year reserved monthly</th>
+                    <th>3 Year prepaid annually</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Storage</td><td>5 %</td><td>10 %</td><td>15 %</td><td>20 %</td><td>24 %</td><td>30 %</td> </tr>
+                <tr><td>Bandwidth / traffic</td><td>5 %</td><td>10 %</td><td>15 %</td><td>20 %</td><td>24 %</td><td>30 %</td> </tr>
+            </tbody>
+    </table>
+  </body>
+

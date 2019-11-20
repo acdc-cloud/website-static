@@ -1,0 +1,608 @@
+
+
+<style>
+    @media (max-width: 1085px) {
+        .sqs-layout [class*="sqs-col"] {
+            float: none !important;
+            width: auto !important;
+        }
+    }
+    @media (max-width: 640px) {
+        .accs-price-table-wrapper {
+            font-size: 2vw !important;
+        }
+
+        .accs-price-table-wrapper {
+            border: 1px solid #e5e8ed;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 2px 4px rgba(3,27,78,.06);
+            box-shadow: 0 2px 4px rgba(3,27,78,.06);
+            font: 400 16px/1.5 Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+        }
+        .accs-price-table {
+            border: none;
+            border-collapse: collapse;
+            border-radius: 5px;
+            border-spacing: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            margin: 0;
+            margin-bottom: 0px;
+            table-layout: unset;
+            width: 100%;
+        }
+
+        .accs-price-table thead tr {
+            background-color: #f3f6f9;
+            border-bottom: 1px solid #e5e8ed;
+        }
+
+        .accs-price-table thead th {
+            border: none;
+            color: #031b4e;
+            font-size: 12px;
+            padding: 14px 10px 13px;
+            padding-left: 10px;
+            text-align: left;
+            text-transform: uppercase;
+            vertical-align: bottom;
+        }
+
+        .accs-price-table tbody tr:not(:last-of-type) {
+            border-bottom: 1px solid #e5e8ed;
+        }
+
+        .accs-price-table tbody tr {
+            border-top: none;
+            color: rgba(3, 27, 78, 0.7);
+        }
+
+
+        .accs-price-table tbody td:first-child, 
+        .accs-price-table tbody th:first-child, 
+        .accs-price-table thead td:first-child, 
+        .accs-price-table thead th:first-child {
+            padding-left: 40px;
+        }
+
+        .medium {
+            text-align: left;
+        }
+        .repl {
+            text-align: left;
+        }
+        .gb-month {
+            text-align: right;
+        }
+
+        .accs-price-table tbody td:first-child, .accs-price-table tbody th:first-child, .accs-price-table thead td:first-child, .accs-price-table thead th:first-child {
+            padding-left: 5px !important;
+        }
+            .accs-price-table thead th {
+            font-size: 10px !important;
+            padding: 0px 0px 0px 0px !important;
+        }
+            .accs-price-table thead th:nth-child(5) {
+            display: none !important;
+        }
+            .accs-price-table tbody td:nth-child(5) {
+            display: none !important;
+        }
+    }
+    .accs-price-table-wrapper {
+        border: 1px solid #e5e8ed;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 2px 4px rgba(3,27,78,.06);
+        box-shadow: 0 2px 4px rgba(3,27,78,.06);
+        /*min-width: 400px;*/
+        /*max-width: 680px;*/
+        font: 400 16px/1.5 Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    }
+    .accs-price-table {
+        border: none;
+        border-collapse: collapse;
+        border-radius: 5px;
+        border-spacing: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin: 0;
+        margin-bottom: 0px;
+        table-layout: unset;
+        width: 100%;
+    }
+
+    .accs-price-table thead tr {
+        background-color: #f3f6f9;
+        border-bottom: 1px solid #e5e8ed;
+    }
+
+    .accs-price-table thead th {
+        border: none;
+        color: #031b4e;
+        font-size: 11px;
+        padding: 14px 10px 13px;
+        padding-left: 10px;
+        text-align: left;
+        text-transform: uppercase;
+        vertical-align: bottom;
+    }
+
+    .accs-price-table tbody tr:not(:last-of-type) {
+        border-bottom: 1px solid #e5e8ed;
+    }
+    .accs-price-table tbody tr:first-of-type {
+        border-top: 3px solid #e5e8ed;
+        border-bottom: 3px solid #e5e8ed;
+    }
+    .accs-price-table tbody tr {
+        border-top: none;
+        color: rgba(3, 27, 78, 0.7);
+    }
+
+    .accs-price-table > tbody:nth-child(2) > tr:nth-child(1) {
+        /*background-color: grey;*/
+    }
+
+    .accs-price-table tbody td:first-child, 
+    .accs-price-table tbody th:first-child, 
+    .accs-price-table thead td:first-child, 
+    .accs-price-table thead th:first-child {
+        padding-left: 40px;
+    }
+
+    .accs-price-table tbody td:last-child, 
+    .accs-price-table tbody th:last-child, 
+    .accs-price-table thead td:last-child, 
+    .accs-price-table thead th:last-child {
+        padding-right: 40px;
+    }
+
+    .ram {
+            text-align: right;
+    }
+    .vcpu {
+            text-align: right;
+    }
+    .hourly {
+        width: 180px;
+        text-align: right;
+    }
+    .monthly {
+        text-align: right;
+        width: 180px;
+        opacity: 0.5;
+    }
+
+    .gb-month {
+        text-align: right;
+    }
+
+    .free {
+        text-align: right;
+        width: 180px;
+    }
+
+    .currency-header {
+        text-align: center;
+    }
+
+    .active-currency {
+        font-weight: bolder;
+        color: green;
+    }
+
+    .table-comment {
+        font-style: italic;
+        text-align: center;
+    }
+
+    table.currency-table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .currency-table {
+        font-style: italic;
+        font-size: small;
+    }
+    #exchange-rate {
+        width: 100px;
+    }
+
+    #currency-nok, #currency-eur, #currency-usd {
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div class="accs-price-table-wrapper">
+        <table class="currency-table">
+            <tr>
+                <td colspan=*>
+                    <span id="currency-nok">NOK </span>
+                    <span id="currency-eur">EUR </span>
+                    <span id="currency-usd">USD</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Exchange rate: </td>
+                <td id="exchange-rate"></td>
+            </tr>
+            <tr>
+                <td>Updated: </td>
+                <td id="exchange-date"></td>
+            </tr>
+        </table>
+        <table id="price-table" class="accs-price-table">
+            <thead>
+                <tr>
+                </tr>
+                <tr>
+                    <th>Linux instances</th>
+                    <th style="text-align:right">#vCPUs</th>
+                    <th style="text-align:right">Memory (GB)</th>
+                    <th id="header-l_flavor-per-hour" style="text-align:right">NOK/hour</th>
+                    <th id="header-l_flavor-per-month" style="text-align:right">~NOK/month</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="flavor-row"><td class="flavor">g1.micro</td><td class="vcpu">1</td><td class="ram">1</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.small</td><td class="vcpu">1</td><td class="ram">4</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.medium</td><td class="vcpu">2</td><td class="ram">8</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.large</td><td class="vcpu">4</td><td class="ram">16</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xlarge</td><td class="vcpu">8</td><td class="ram">32</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xxlarge</td><td class="vcpu">16</td><td class="ram">64</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xxxlarge</td><td class="vcpu">32</td><td class="ram">128</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.small_lowmem</td><td class="vcpu">1</td><td class="ram">2</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.medium_lowmem</td><td class="vcpu">2</td><td class="ram">4</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.large_lowmem</td><td class="vcpu">4</td><td class="ram">8</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xlarge_lowmem</td><td class="vcpu">8</td><td class="ram">16</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xxlarge_lowmem</td><td class="vcpu">16</td><td class="ram">32</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xxxlarge_lowmem</td><td class="vcpu">32</td><td class="ram">64</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.small_highmem</td><td class="vcpu">1</td><td class="ram">8</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.medium_highmem</td><td class="vcpu">2</td><td class="ram">16</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.large_highmem</td><td class="vcpu">4</td><td class="ram">32</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xlarge_highmem</td><td class="vcpu">8</td><td class="ram">64</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">g1.xxlarge_highmem</td><td class="vcpu">16</td><td class="ram">128</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr><td colspan=*>&nbsp;</td></tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Windows instances</th>
+                    <th style="text-align:right">#vCPUs</th>
+                    <th style="text-align:right">Memory (GB)</th>
+                    <th id="header-w_flavor-per-hour" style="text-align:right">NOK/hour</th>
+                    <th id="header-w_flavor-per-month" style="text-align:right">~NOK/month</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="flavor-row"><td class="flavor">w1.small</td><td class="vcpu">1</td><td class="ram">4</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">w1.medium</td><td class="vcpu">2</td><td class="ram">8</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">w1.large</td><td class="vcpu">4</td><td class="ram">16</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr class="flavor-row"><td class="flavor">w1.xlarge</td><td class="vcpu">8</td><td class="ram">32</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr><td colspan=*>&nbsp;</td></tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+    </div>
+
+    <div class="accs-price-table-wrapper">
+        <table id="accs-price-table" class="accs-price-table">
+            <thead>
+                <tr>
+                    <th>Storage services</th>
+                    <th colspan=3>&nbsp;</th>
+                    <th id="storage-header-gb-month" style="text-align:right">NOK per GB per month</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="storage-row"><td class="storage">HDD block storage</td><td colspan=3>&nbsp;</td><td class="gb-month">0,50</td></tr>
+                <tr class="storage-row"><td class="storage">HDD block storage - encrypted</td><td colspan=3>&nbsp;</td><td class="gb-month">0,60</td></tr>
+                <tr class="storage-row"><td class="storage">NVMe block storage</td><td colspan=3>&nbsp;</td><td class="gb-month">1,00</td></tr>
+                <tr class="storage-row"><td class="storage">NVMe block storage - encrypted</td><td colspan=3>&nbsp;</td><td class="gb-month">1,10</td></tr>
+                <tr class="storage-row"><td class="storage">Object storage</td><td colspan=3>&nbsp;</td><td class="gb-month">0,60</td></tr>
+                <tr><td colspan=* class="table-comment">All storage is backed by at least three replicas in multiple Availability Zones.</td></tr>
+                <tr><td>&nbsp;</td></tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+    </div>
+
+    <div class="accs-price-table-wrapper">
+        <table id="table-network-traffic" class="accs-price-table">
+            <thead>
+                <tr>
+                    <th>Data Traffic</th>
+                    <th id="traffic-header-gb-month" style="text-align:right"></th>
+                    <th style="text-align:right">Monthly Free Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="storage-row"><td class="storage">Ingress traffic (RX)</td><td class="gb-month"></td><td class="free">100 GB</td></tr>
+                <tr class="storage-row"><td class="storage">Egress traffic (TX)</td>  <td class="gb-month"></td> <td class="free">100 GB</td></tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        </div>
+        <div class="accs-price-table-wrapper">
+            <table id="network-table" class="accs-price-table">
+                <thead> 
+                    <tr><th>Network Services</th>
+                        <th id="network-header-per-hour" style="text-align:right"></th>
+                        <th id="network-header-per-month" style="text-align:right"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flavor-row"><td class="flavor">Public IPv4 address</td><td class="hourly"></td><td class="monthly"></td></tr>
+                    <tr><td >Private network</td><td class="hourly">Free of charge</td><td class="monthly">Free of charge</td></tr>
+                </tbody>
+            </table>
+        </div>
+  
+  <script type="text/javascript">
+
+    // INIT
+    var cachedCurrencyData = {
+        "rates": {
+            "CAD": 0.1449732302,
+            "HKD": 0.8585465001,
+            "ISK": 13.4741225461,
+            "PHP": 5.5602815784,
+            "DKK": 0.7408883601,
+            "HUF": 33.2411263137,
+            "CZK": 2.5374776919,
+            "GBP": 0.0846024192,
+            "RON": 0.4733690264,
+            "SEK": 1.0569403133,
+            "IDR": 1545.5353955979,
+            "INR": 7.8748760658,
+            "BRL": 0.4580705929,
+            "RUB": 7.0022010708,
+            "HRK": 0.737656157,
+            "JPY": 11.9522109855,
+            "THB": 3.3157842554,
+            "CHF": 0.1086654769,
+            "EUR": 0.0991473329,
+            "MYR": 0.4557208011,
+            "BGN": 0.1939123538,
+            "TRY": 0.6277612532,
+            "CNY": 0.7696708309,
+            "NOK": 1,
+            "NZD": 0.1712770176,
+            "ZAR": 1.6206920484,
+            "USD": 0.109666865,
+            "MXN": 2.1109161214,
+            "SGD": 0.1491869919,
+            "AUD": 0.1610350982,
+            "ILS": 0.3792385485,
+            "KRW": 127.8147927821,
+            "PLN": 0.4254907793
+        },
+        "base": "NOK",
+        "date": "2019-11-18"
+    }
+
+    async function GetUpdatedExchangeRates() {
+        var url = "https://api.exchangeratesapi.io/latest?base=NOK";
+        return await fetch(url)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                cachedCurrencyData = data;
+                SetCurrency("NOK");
+            })
+            .catch(err => {
+                console.error("An error occurred fetching exchange rates: ", err);
+            })
+    }
+    
+    window.onload = function() {
+        document.getElementById("currency-nok").addEventListener("click", function() {SetCurrency("NOK")}, false);
+        document.getElementById("currency-eur").addEventListener("click", function() {SetCurrency("EUR")}, false);
+        document.getElementById("currency-usd").addEventListener("click", function() {SetCurrency("USD")}, false);
+    }
+
+    // SETUP
+    GetUpdatedExchangeRates();
+    SetCurrency("NOK");
+    
+    function SetCurrency(chosenCurrency) {
+        document.getElementById("exchange-rate").innerHTML = ExchangeRate(chosenCurrency);
+        document.getElementById("exchange-date").innerHTML = cachedCurrencyData["date"];
+        document.getElementById("header-l_flavor-per-hour").innerHTML = chosenCurrency + "/HOUR";
+        document.getElementById("header-l_flavor-per-month").innerHTML = "~"+ chosenCurrency + "/MONTH";
+        document.getElementById("header-w_flavor-per-hour").innerHTML = chosenCurrency + "/HOUR";
+        document.getElementById("header-w_flavor-per-month").innerHTML = "~" + chosenCurrency + "/MONTH";
+        document.getElementById("storage-header-gb-month").innerHTML = chosenCurrency + " PER GB PER MONTH";
+        document.getElementById("traffic-header-gb-month").innerHTML = chosenCurrency + "/GB";
+        document.getElementById("network-header-per-hour").innerHTML = chosenCurrency + "/HOUR";
+        document.getElementById("network-header-per-month").innerHTML = "~" + chosenCurrency + "/MONTH";
+                
+        switch (chosenCurrency) {
+            case "NOK":
+                document.getElementById("currency-nok").classList.add("active-currency");
+                document.getElementById("currency-eur").classList.remove("active-currency");
+                document.getElementById("currency-usd").classList.remove("active-currency");
+                RenderCurrency("NOK");
+                break;
+            case "EUR":
+                document.getElementById("currency-nok").classList.remove("active-currency");
+                document.getElementById("currency-eur").classList.add("active-currency");
+                document.getElementById("currency-usd").classList.remove("active-currency");
+                RenderCurrency("EUR");
+                break;
+            case "USD":
+                document.getElementById("currency-nok").classList.remove("active-currency");
+                document.getElementById("currency-eur").classList.remove("active-currency");
+                document.getElementById("currency-usd").classList.add("active-currency");
+                document.getElementById("currency-usd").innerHTML = "USD ";
+                RenderCurrency("USD");
+                break;
+            default:
+                document.getElementById("currency-nok").innerHTML = "ERROR";
+                document.getElementById("currency-eur").innerHTML = "ERROR";
+                document.getElementById("currency-usd").innerHTML = "ERROR";
+                break;
+        }
+    }
+
+    function GetPriceList() {
+        
+        return { 
+            "g1.micro": 0.1,
+            "g1.small": 0.5,
+            "g1.medium": 1.0,
+            "g1.large": 2.0,
+            "g1.xlarge": 4.0,
+            "g1.xxlarge": 8.0,
+            "g1.xxxlarge": 16.0,
+            "g1.small_lowmem": 0.38,
+            "g1.medium_lowmem": 0.75,
+            "g1.large_lowmem": 1.5,
+            "g1.xlarge_lowmem": 3.0,
+            "g1.xxlarge_lowmem": 6.0,
+            "g1.xxxlarge_lowmem": 12.0,
+            "g1.small_highmem": 0.75,
+            "g1.medium_highmem": 1.5,
+            "g1.large_highmem": 3.0,
+            "g1.xlarge_highmem": 6.0,
+            "g1.xxlarge_highmem": 12.0,
+            "w1.small": 0.70,
+            "w1.medium": 1.40,
+            "w1.large": 2.80,
+            "w1.xlarge": 5.60,
+            "HDD block storage": 0.50,
+            "HDD block storage - encrypted": 0.60,
+            "NVMe block storage": 1.00,
+            "NVMe block storage - encrypted": 1.10,
+            "Object storage": 0.60,
+            "Ingress traffic (RX)": 0.1,
+            "Egress traffic (TX)": 0.5,
+            "Public IPv4 address": 0.02,
+        };
+
+    }
+
+
+
+    function ExchangeRate(requestedCurrency) {
+        // TODO Make this function dynamic, with fallback
+        return cachedCurrencyData["rates"][requestedCurrency];
+    }
+
+    function UpdateCurrency(currency, flavor) {
+        let pricelist = GetPriceList();
+        let rate = ExchangeRate(currency);
+        return parseFloat(pricelist[flavor]*rate).toFixed(4);
+    }
+
+    function ChangeCurrency() {
+        
+        SetCurrency();
+
+        RenderCurrency();
+    }
+
+    function RenderCurrency(currCurrency) {
+        var symbol = "NOK"
+        switch (currCurrency) {
+            case "NOK":
+                symbol = "kr. ";
+                break;
+            case "EUR":
+                symbol = "€ ";
+                break;
+            case "USD":
+                symbol = "$ ";
+                break;
+            default:
+                "??";
+                break;
+        }
+
+        // Table for instances
+        var table = document.getElementById("price-table");
+        var r=0;
+        while( row = table.rows[r++] )
+        {
+            if (row.className == "flavor-row" ) {
+                var c=0;
+                while( cell = row.cells[c++] ) {
+
+                    if ( cell.className == "flavor" ) {
+                        var flavor = cell.textContent;
+                    } 
+                    else if ( cell.className == "hourly" ) {
+                        cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
+                    }
+                    else if ( cell.className == "monthly" ) {
+                        
+                        cell.textContent = symbol + ((UpdateCurrency(currCurrency, flavor)) * 730).toFixed(4);
+                    }
+                }   
+            }
+        }
+
+        // Table for storage
+        var table = document.getElementById("accs-price-table");
+        var r=0;
+        while( row = table.rows[r++] )
+        {
+            if ( row.className == "storage-row" ) {
+                var c=0;
+                while( cell = row.cells[c++] ) {
+
+                    if ( cell.className == "storage" ) {
+                        var flavor = cell.textContent;
+                    } 
+                    else if ( cell.className == "gb-month" ) {
+                        cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
+                    }
+                }   
+            }
+        }
+
+        // Table for data traffic
+        var table = document.getElementById("table-network-traffic");
+        var r=0;
+        while( row = table.rows[r++] )
+        {
+            if ( row.className == "storage-row" ) {
+                var c=0;
+                while( cell = row.cells[c++] ) {
+
+                    if ( cell.className == "storage" ) {
+                        var flavor = cell.textContent;
+                    } 
+                    else if ( cell.className == "gb-month" ) {
+                        cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
+                    }
+                }   
+            }
+        }
+
+        // Table for network services
+        var table = document.getElementById("network-table");
+        var r=0;
+        while( row = table.rows[r++] )
+        {
+            if (row.className == "flavor-row" ) {
+                var c=0;
+                while( cell = row.cells[c++] ) {
+
+                    if ( cell.className == "flavor" ) {
+                        var flavor = cell.textContent;
+                    } 
+                    else if ( cell.className == "hourly" ) {
+                        cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
+                    }
+                    else if ( cell.className == "monthly" ) {
+                        
+                        cell.textContent = symbol + ((UpdateCurrency(currCurrency, flavor)) * 730).toFixed(4);
+                    }
+                }   
+            }
+        }
+    }
+</script>

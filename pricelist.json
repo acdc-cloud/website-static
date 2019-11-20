@@ -1,0 +1,92 @@
+{   "g1.micro": {
+        "vcpu": 1,
+        "ram": 1,
+        "hourlyNOK": 0.10
+    },
+    "g1.small": {
+        "vcpu": 1,
+        "ram": 1,
+        "hourlyNOK": 0.50
+    },
+    "g1.medium": {
+        "vcpu": 2,
+        "ram": 8,
+        "hourlyNOK": 1.00
+    },
+    "g1.large": {
+        "vcpu": 4,
+        "ram": 16,
+        "hourlyNOK": 2.00
+    },
+    "g1.xlarge": {
+        "vcpu": 8,
+        "ram": 32,
+        "hourlyNOK": 4.00
+    },
+    "g1.xxlarge": {
+        "vcpu": 16,
+        "ram": 32,
+        "hourlyNOK": 8.00
+    },
+    "g1.xxxlarge": {
+        "vcpu": 32,
+        "ram": 128,
+        "hourlyNOK": 16.00
+    },
+    "g1.small_lowmem": {
+        "vcpu": 1,
+        "ram": 2,
+        "hourlyNOK": 0.38
+    },
+    "g1.medium_lowmem": {
+        "vcpu": 2,
+        "ram": 4,
+        "hourlyNOK": 0.75
+    },
+    "g1.large_lowmem": {
+        "vcpu": 4,
+        "ram": 8,
+        "hourlyNOK": 1.50
+    },
+    "g1.xlarge_lowmem": {
+        "vcpu": 8,
+        "ram": 16,
+        "hourlyNOK": 3.00
+    },
+    "g1.xxlarge_lowmem": {
+        "vcpu": 16,
+        "ram": 32,
+        "hourlyNOK": 6.00
+    },
+    "g1.xxxlarge_lowmem": {
+        "vcpu": 32,
+        "ram": 64,
+        "hourlyNOK": 12.00
+    },
+    "g1.small_highmem": {
+        "vcpu": 1,
+        "ram": 8,
+        "hourlyNOK": 0.75
+    },
+    "g1.medium_highmem": {
+        "vcpu": 2,
+        "ram": 16,
+        "hourlyNOK": 1.50
+    },
+    "g1.large_highmem": {
+        "vcpu": 4,
+        "ram": 32,
+        "hourlyNOK": 3.00
+    },
+    "g1.xlarge_highmem": {
+        "vcpu": 8,
+        "ram": 64,
+        "hourlyNOK": 6.00
+    },
+    "g1.xxlarge_highmem": {
+        "vcpu": 16,
+        "ram": 128,
+        "hourlyNOK": 12.00
+    }
+} 
+

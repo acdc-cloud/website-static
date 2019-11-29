@@ -1,4 +1,8 @@
 
+<!--
+    This file lives in https://github.com/acdc-cloud/website-static
+    and should always be updated and tested there!
+-->
 
 <style>
     @media (max-width: 1085px) {
@@ -305,21 +309,37 @@
     </div>
 
     <div class="accs-price-table-wrapper">
-        <table id="table-network-traffic" class="accs-price-table">
+        <table id="table-loadbalancing" class="accs-price-table">
             <thead>
-                <tr>
-                    <th>Data Traffic</th>
-                    <th id="traffic-header-gb-month" style="text-align:right"></th>
-                    <th style="text-align:right">Monthly Free Usage</th>
-                </tr>
-            </thead>
+                    <tr>
+                        <th>Loadbalancing</th>
+                        <th id="header-lb-per-hour" style="text-align:right">NOK/hour</th>
+                        <th id="header-lb-per-month" style="text-align:right">~NOK/month</th>
+                    </tr>
+                </thead>
             <tbody>
-                <tr class="storage-row"><td class="storage">Ingress traffic (RX)</td><td class="gb-month"></td><td class="free">100 GB</td></tr>
-                <tr class="storage-row"><td class="storage">Egress traffic (TX)</td>  <td class="gb-month"></td> <td class="free">100 GB</td></tr>
+                <tr class="lb-row"><td class="flavor-row">Loadbalancer instance</td><td class="hourly"></td><td class="monthly"></td></tr>
+
             </tbody>
         </table>
         <p>&nbsp;</p>
         </div>
+        <div class="accs-price-table-wrapper">
+            <table id="table-network-traffic" class="accs-price-table">
+                <thead>
+                    <tr>
+                        <th>Data Traffic</th>
+                        <th id="traffic-header-gb-month" style="text-align:right"></th>
+                        <th style="text-align:right">Monthly Free Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="storage-row"><td class="storage">Ingress traffic (RX)</td><td class="gb-month"></td><td class="free">100 GB</td></tr>
+                    <tr class="storage-row"><td class="storage">Egress traffic (TX)</td>  <td class="gb-month"></td> <td class="free">100 GB</td></tr>
+                </tbody>
+            </table>
+            <p>&nbsp;</p>
+            </div>
         <div class="accs-price-table-wrapper">
             <table id="network-table" class="accs-price-table">
                 <thead> 
@@ -414,7 +434,9 @@
         document.getElementById("traffic-header-gb-month").innerHTML = chosenCurrency + "/GB";
         document.getElementById("network-header-per-hour").innerHTML = chosenCurrency + "/HOUR";
         document.getElementById("network-header-per-month").innerHTML = "~" + chosenCurrency + "/MONTH";
-                
+        document.getElementById("header-lb-per-hour").innerHTML = chosenCurrency + "/HOUR";
+        document.getElementById("header-lb-per-month").innerHTML = "~"+ chosenCurrency + "/MONTH";
+        
         switch (chosenCurrency) {
             case "NOK":
                 document.getElementById("currency-nok").classList.add("active-currency");
@@ -476,6 +498,7 @@
             "Ingress traffic (RX)": 0.1,
             "Egress traffic (TX)": 0.5,
             "Public IPv4 address": 0.02,
+            "LBaaS": 0.3,
         };
 
     }
@@ -554,6 +577,29 @@
                     } 
                     else if ( cell.className == "gb-month" ) {
                         cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
+                    }
+                }   
+            }
+        }
+
+        // Table for loadbalancing
+        var table = document.getElementById("table-loadbalancing");
+        var r=0;
+        while( row = table.rows[r++] )
+        {
+            if (row.className == "lb-row" ) {
+                var c=0;
+                while( cell = row.cells[c++] ) {
+
+                    if ( cell.className == "flavor" ) {
+                        var flavor = cell.textContent;
+                    } 
+                    else if ( cell.className == "hourly" ) {
+                        cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
+                    }
+                    else if ( cell.className == "monthly" ) {
+                        
+                        cell.textContent = symbol + ((UpdateCurrency(currCurrency, flavor)) * 730).toFixed(4);
                     }
                 }   
             }

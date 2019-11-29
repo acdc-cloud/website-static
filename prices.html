@@ -307,23 +307,6 @@
         </table>
         <p>&nbsp;</p>
     </div>
-
-    <div class="accs-price-table-wrapper">
-        <table id="table-loadbalancing" class="accs-price-table">
-            <thead>
-                    <tr>
-                        <th>Loadbalancing</th>
-                        <th id="header-lb-per-hour" style="text-align:right">NOK/hour</th>
-                        <th id="header-lb-per-month" style="text-align:right">~NOK/month</th>
-                    </tr>
-                </thead>
-            <tbody>
-                <tr class="lb-row"><td class="flavor-row">Loadbalancer instance</td><td class="hourly"></td><td class="monthly"></td></tr>
-
-            </tbody>
-        </table>
-        <p>&nbsp;</p>
-        </div>
         <div class="accs-price-table-wrapper">
             <table id="table-network-traffic" class="accs-price-table">
                 <thead>
@@ -351,6 +334,7 @@
                 <tbody>
                     <tr class="flavor-row"><td class="flavor">Public IPv4 address</td><td class="hourly"></td><td class="monthly"></td></tr>
                     <tr><td >Private network</td><td class="hourly">Free of charge</td><td class="monthly">Free of charge</td></tr>
+                    <tr class="flavor-row"><td class="flavor">Loadbalancer instance</td><td class="hourly"></td><td class="monthly"></td></tr>
                 </tbody>
             </table>
         </div>
@@ -434,8 +418,6 @@
         document.getElementById("traffic-header-gb-month").innerHTML = chosenCurrency + "/GB";
         document.getElementById("network-header-per-hour").innerHTML = chosenCurrency + "/HOUR";
         document.getElementById("network-header-per-month").innerHTML = "~" + chosenCurrency + "/MONTH";
-        document.getElementById("header-lb-per-hour").innerHTML = chosenCurrency + "/HOUR";
-        document.getElementById("header-lb-per-month").innerHTML = "~"+ chosenCurrency + "/MONTH";
         
         switch (chosenCurrency) {
             case "NOK":
@@ -498,7 +480,7 @@
             "Ingress traffic (RX)": 0.1,
             "Egress traffic (TX)": 0.5,
             "Public IPv4 address": 0.02,
-            "LBaaS": 0.3,
+            "Loadbalancer instance": 0.3,
         };
 
     }
@@ -577,29 +559,6 @@
                     } 
                     else if ( cell.className == "gb-month" ) {
                         cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
-                    }
-                }   
-            }
-        }
-
-        // Table for loadbalancing
-        var table = document.getElementById("table-loadbalancing");
-        var r=0;
-        while( row = table.rows[r++] )
-        {
-            if (row.className == "lb-row" ) {
-                var c=0;
-                while( cell = row.cells[c++] ) {
-
-                    if ( cell.className == "flavor" ) {
-                        var flavor = cell.textContent;
-                    } 
-                    else if ( cell.className == "hourly" ) {
-                        cell.textContent = symbol + UpdateCurrency(currCurrency, flavor);
-                    }
-                    else if ( cell.className == "monthly" ) {
-                        
-                        cell.textContent = symbol + ((UpdateCurrency(currCurrency, flavor)) * 730).toFixed(4);
                     }
                 }   
             }

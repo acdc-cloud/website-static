@@ -1,4 +1,8 @@
 
+<!--
+    This file lives in https://github.com/acdc-cloud/website-static
+    and should always be updated and tested there!
+-->
 
 <style>
     @media (max-width: 1085px) {
@@ -211,6 +215,7 @@
 
 </style>
 <body>
+    
     <div class="accs-price-table-wrapper">
         <table class="currency-table">
             <tr>
@@ -229,10 +234,9 @@
                 <td id="exchange-date"></td>
             </tr>
         </table>
+        
         <table id="price-table" class="accs-price-table">
             <thead>
-                <tr>
-                </tr>
                 <tr>
                     <th>Linux instances</th>
                     <th style="text-align:right">#vCPUs</th>
@@ -262,6 +266,7 @@
                 <tr class="flavor-row"><td class="flavor">g1.xxlarge_highmem</td><td class="vcpu">16</td><td class="ram">128</td><td class="hourly"></td><td class="monthly"></td></tr>
                 <tr><td colspan=*>&nbsp;</td></tr>
             </tbody>
+            
             <thead>
                 <tr>
                     <th>Windows instances</th>
@@ -281,7 +286,7 @@
         </table>
         <p>&nbsp;</p>
     </div>
-
+    
     <div class="accs-price-table-wrapper">
         <table id="accs-price-table" class="accs-price-table">
             <thead>
@@ -303,7 +308,7 @@
         </table>
         <p>&nbsp;</p>
     </div>
-
+    
     <div class="accs-price-table-wrapper">
         <table id="table-network-traffic" class="accs-price-table">
             <thead>
@@ -319,23 +324,25 @@
             </tbody>
         </table>
         <p>&nbsp;</p>
-        </div>
-        <div class="accs-price-table-wrapper">
-            <table id="network-table" class="accs-price-table">
-                <thead> 
-                    <tr><th>Network Services</th>
-                        <th id="network-header-per-hour" style="text-align:right"></th>
-                        <th id="network-header-per-month" style="text-align:right"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="flavor-row"><td class="flavor">Public IPv4 address</td><td class="hourly"></td><td class="monthly"></td></tr>
-                    <tr><td >Private network</td><td class="hourly">Free of charge</td><td class="monthly">Free of charge</td></tr>
-                </tbody>
-            </table>
-        </div>
+    </div>
+    
+    <div class="accs-price-table-wrapper">
+        <table id="network-table" class="accs-price-table">
+            <thead> 
+                <tr><th>Network Services</th>
+                    <th id="network-header-per-hour" style="text-align:right"></th>
+                    <th id="network-header-per-month" style="text-align:right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="flavor-row"><td class="flavor">Public IPv4 address</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr><td >Private network</td><td class="hourly">Free of charge</td><td class="monthly">Free of charge</td></tr>
+                <tr class="flavor-row"><td class="flavor">Loadbalancer instance</td><td class="hourly"></td><td class="monthly"></td></tr>
+            </tbody>
+        </table>
+    </div>
   
-  <script type="text/javascript">
+<script type="text/javascript">
 
     // INIT
     var cachedCurrencyData = {
@@ -414,7 +421,7 @@
         document.getElementById("traffic-header-gb-month").innerHTML = chosenCurrency + "/GB";
         document.getElementById("network-header-per-hour").innerHTML = chosenCurrency + "/HOUR";
         document.getElementById("network-header-per-month").innerHTML = "~" + chosenCurrency + "/MONTH";
-                
+        
         switch (chosenCurrency) {
             case "NOK":
                 document.getElementById("currency-nok").classList.add("active-currency");
@@ -476,6 +483,7 @@
             "Ingress traffic (RX)": 0.1,
             "Egress traffic (TX)": 0.5,
             "Public IPv4 address": 0.02,
+            "Loadbalancer instance": 0.3,
         };
 
     }

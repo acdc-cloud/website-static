@@ -215,6 +215,7 @@
 
 </style>
 <body>
+    
     <div class="accs-price-table-wrapper">
         <table class="currency-table">
             <tr>
@@ -233,10 +234,9 @@
                 <td id="exchange-date"></td>
             </tr>
         </table>
+        
         <table id="price-table" class="accs-price-table">
             <thead>
-                <tr>
-                </tr>
                 <tr>
                     <th>Linux instances</th>
                     <th style="text-align:right">#vCPUs</th>
@@ -266,6 +266,7 @@
                 <tr class="flavor-row"><td class="flavor">g1.xxlarge_highmem</td><td class="vcpu">16</td><td class="ram">128</td><td class="hourly"></td><td class="monthly"></td></tr>
                 <tr><td colspan=*>&nbsp;</td></tr>
             </tbody>
+            
             <thead>
                 <tr>
                     <th>Windows instances</th>
@@ -285,7 +286,7 @@
         </table>
         <p>&nbsp;</p>
     </div>
-
+    
     <div class="accs-price-table-wrapper">
         <table id="accs-price-table" class="accs-price-table">
             <thead>
@@ -307,39 +308,41 @@
         </table>
         <p>&nbsp;</p>
     </div>
-        <div class="accs-price-table-wrapper">
-            <table id="table-network-traffic" class="accs-price-table">
-                <thead>
-                    <tr>
-                        <th>Data Traffic</th>
-                        <th id="traffic-header-gb-month" style="text-align:right"></th>
-                        <th style="text-align:right">Monthly Free Usage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="storage-row"><td class="storage">Ingress traffic (RX)</td><td class="gb-month"></td><td class="free">100 GB</td></tr>
-                    <tr class="storage-row"><td class="storage">Egress traffic (TX)</td>  <td class="gb-month"></td> <td class="free">100 GB</td></tr>
-                </tbody>
-            </table>
-            <p>&nbsp;</p>
-            </div>
-        <div class="accs-price-table-wrapper">
-            <table id="network-table" class="accs-price-table">
-                <thead> 
-                    <tr><th>Network Services</th>
-                        <th id="network-header-per-hour" style="text-align:right"></th>
-                        <th id="network-header-per-month" style="text-align:right"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="flavor-row"><td class="flavor">Public IPv4 address</td><td class="hourly"></td><td class="monthly"></td></tr>
-                    <tr><td >Private network</td><td class="hourly">Free of charge</td><td class="monthly">Free of charge</td></tr>
-                    <tr class="flavor-row"><td class="flavor">Loadbalancer instance</td><td class="hourly"></td><td class="monthly"></td></tr>
-                </tbody>
-            </table>
-        </div>
+    
+    <div class="accs-price-table-wrapper">
+        <table id="table-network-traffic" class="accs-price-table">
+            <thead>
+                <tr>
+                    <th>Data Traffic</th>
+                    <th id="traffic-header-gb-month" style="text-align:right"></th>
+                    <th style="text-align:right">Monthly Free Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="storage-row"><td class="storage">Ingress traffic (RX)</td><td class="gb-month"></td><td class="free">100 GB</td></tr>
+                <tr class="storage-row"><td class="storage">Egress traffic (TX)</td>  <td class="gb-month"></td> <td class="free">100 GB</td></tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+    </div>
+    
+    <div class="accs-price-table-wrapper">
+        <table id="network-table" class="accs-price-table">
+            <thead> 
+                <tr><th>Network Services</th>
+                    <th id="network-header-per-hour" style="text-align:right"></th>
+                    <th id="network-header-per-month" style="text-align:right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="flavor-row"><td class="flavor">Public IPv4 address</td><td class="hourly"></td><td class="monthly"></td></tr>
+                <tr><td >Private network</td><td class="hourly">Free of charge</td><td class="monthly">Free of charge</td></tr>
+                <tr class="flavor-row"><td class="flavor">Loadbalancer instance</td><td class="hourly"></td><td class="monthly"></td></tr>
+            </tbody>
+        </table>
+    </div>
   
-  <script type="text/javascript">
+<script type="text/javascript">
 
     // INIT
     var cachedCurrencyData = {
